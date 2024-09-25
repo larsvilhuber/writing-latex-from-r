@@ -2,6 +2,7 @@
 
 source(file.path(rprojroot::find_rstudio_root_file(),"pathconfig.R"),echo=FALSE)
 source(file.path(basepath,"global-libraries.R"),echo=FALSE)
+source(file.path(programs,"config.R"), echo=FALSE)
 
 # scrape the data from BEA website
 html_content <- read_html(bea.papers.html)

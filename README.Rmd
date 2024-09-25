@@ -140,6 +140,13 @@ Internet access is required to run the programs,
 
 - when re-running scraping.
 
+## Running the code
+
+```{r}
+source(file.path(programs,"01_download_data.R"),echo=TRUE)
+```
+
+
 
 ##  License for Code
 
