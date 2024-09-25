@@ -22,7 +22,7 @@ editor_options:
 
 ```{r setup,echo=FALSE, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-knitr::opts_chunk$set(eval=FALSE)
+knitr::opts_chunk$set(eval=TRUE)
 
 source(file.path(rprojroot::find_rstudio_root_file(),"pathconfig.R"),echo=FALSE)
 
@@ -142,10 +142,31 @@ Internet access is required to run the programs,
 
 ## Running the code
 
+### Obtain the data
+
 ```{r}
 source(file.path(programs,"01_download_data.R"),echo=TRUE)
 ```
 
+### Prepare the analysis
+
+
+```{r}
+source(file.path(programs,"02_analyze_data.R"),echo=TRUE)
+```
+
+### Show table
+
+```{r,results='asis'}
+knitr::kable(output_table)
+```
+
+### Create output
+
+
+```{r}
+source(file.path(programs,"03_display_results.R"),echo=TRUE)
+```
 
 
 ##  License for Code
