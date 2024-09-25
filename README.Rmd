@@ -1,0 +1,198 @@
+---
+title: "Code and Data for: BEA papers"
+author:
+  - Lars Vilhuber
+date: "`r Sys.Date()`"
+output:
+  html_document: 
+    keep_md: yes
+    number_sections: yes
+    toc: yes
+    toc_depth: 1
+  word_document: default
+  pdf_document: 
+    toc: true
+    number_sections: true
+    toc_depth: 1
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+```{r setup,echo=FALSE, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(eval=FALSE)
+
+source(file.path(rprojroot::find_rstudio_root_file(),"pathconfig.R"),echo=FALSE)
+
+we.are.README <- TRUE
+
+source(file.path(basepath,"global-libraries.R"),echo=FALSE)
+source(file.path(programs,"config.R"), echo=FALSE)
+
+
+```
+
+
+# Overview
+
+The code in this replication package ....
+
+# Data Availability and Provenance Statements
+
+All data are public, and can be redistributed. The BEA data...
+
+## Statement about Rights
+
+- [x] I certify that the author(s) of the manuscript have legitimate access to and permission to use the data used in this manuscript. 
+- [x] I certify that the author(s) of the manuscript have documented permission to redistribute/publish the data contained within this replication package. Appropriate permission are documented in the [LICENSE.txt](LICENSE.txt) file.
+
+
+## License for Data
+
+- BEA data is in the public domain, and can be redistributed without restriction.
+
+All derivative data contained herein, if not otherwise encumbered, is available under a [CC-BY-NC-4.0](https://creativecommons.org/licenses/by-nc/4.0/legalcode) license. Usage by commercial entities is permitted, reselling the data is not.
+
+
+## Summary of Availability
+
+- [x] All data **are** publicly available.
+- [ ] Some data **cannot be made** publicly available.
+- [ ] **No data can be made** publicly available.
+
+
+
+## Details on each Data Source
+
+### BEA data
+
+The data were scraped from the BEA website (`r bea.papers.html`).
+
+
+# Computational requirements
+
+
+## Software Requirements
+
+- [x] The replication package contains one or more programs to install all dependencies and set up the necessary directory structure. 
+
+- `r version$version.string` on `r version$system`
+
+
+### Software citations
+
+Skipped for today.
+
+## Controlled Randomness
+
+
+
+- [ ] Random seed is set at line _____ of program ______
+- [x] No Pseudo random generator is used in the analysis described here.
+
+Note that re-scraping the data (turned off by default) **may** generate different data.
+
+## Memory, Runtime, Storage Requirements
+
+### Summary
+
+Approximate time needed to reproduce the analyses on a standard (CURRENT YEAR) desktop machine (when not running API queries):
+
+- [ ] <10 minutes
+- [ ] 10-60 minutes
+- [ ] 1-2 hours
+- [ ] 2-8 hours
+- [ ] 8-24 hours
+- [ ] 1-3 days
+- [ ] 3-14 days
+- [ ] > 14 days
+
+
+Approximate storage space needed:
+
+- [ ] < 25 MBytes
+- [ ] 25 MB - 250 MB
+- [ ] 250 MB - 2 GB
+- [ ] 2 GB - 25 GB
+- [ ] 25 GB - 250 GB
+- [ ] > 250 GB
+
+- [ ] Not feasible to run on a desktop machine, as described below.
+
+### Details
+
+The code was last run on (this should be parsed from the OS info)
+
+- OS: Linux
+- Processor:  AMD Ryzen 9 3900X 12-Core Processor, 24 cores
+- Memory available: 31GB memory
+- `r version$version.string` on `r version$system`
+
+
+# Description of programs/code
+
+Each numbered R program can be run independently, in the sequence implied by the numbering scheme. 
+A convenience bash main script (`run.sh`) to run all programs is provided in the root of the project, and will run all data cleaning and analysis programs.
+
+Internet access is required to run the programs, 
+
+- when re-running scraping.
+
+
+##  License for Code
+
+
+The code (all files ending in `.R`, `.Rmd`, and `.sh`) is licensed under a BSD license. See [LICENSE.txt](LICENSE.txt) for details.
+
+# Instructions to Replicators
+
+- in the "Terminal" (of the RStudio app), run `bash ./run.sh`
+
+Alternative ways to run this (these were not tested):
+
+- optionally, before running project code, run `Rscript -e "renv::init()"` (on Windows, `Rscript.exe -e "renv::init()"` ) to isolate the project libraries from your system (assumes `renv` is installed, see [renv](https://rstudio.github.io/renv/articles/renv.html)).
+- Using the same R version as described above, run each program individually as desired, in the order indicated above.
+
+## Details
+
+This should contain a list of programs and what they do.
+
+
+# List of tables and programs
+
+
+The provided code reproduces:
+
+- [x] All numbers provided in text in the paper
+- [x] All tables and figures in the paper
+- [ ] Selected tables and figures in the paper, as explained and justified below.
+
+---
+
+# Acknowledgements
+
+This README based on the template created by @template-readme. 
+
+# References
+
+
+<div id="refs"></div>
+
+#  Appendix {-} 
+
+## Appendix: System and package info
+
+
+```{r sysinfo,eval=TRUE,echo=FALSE}
+# we don't want to capture what the Rmarkdown session is running, but rather, what the computational session is running
+if (! file.exists(file.path(programs,"99_zz_info.txt"))) {
+system("cd programs && R CMD BATCH 99_zz_info.R")
+}
+```
+
+```{r includetext,echo=FALSE,eval=TRUE}
+cat(readLines(file.path(programs,"99_zz_info.txt")), sep = '\n')
+
+```
