@@ -161,6 +161,8 @@ source(file.path(programs,"02_analyze_data.R"),echo=TRUE)
 knitr::kable(output_table)
 ```
 
+the latest year is `r max(output_table$Year)`.
+
 ### Create output
 
 
