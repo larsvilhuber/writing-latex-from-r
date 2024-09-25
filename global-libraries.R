@@ -1,7 +1,7 @@
 ####################################
 # global libraries used everywhere #
 ####################################
-mran.date <- "2022-11-22"
+mran.date <- "2024-09-24"
 
 get_os <- function(){
   sysinf <- Sys.info()
@@ -43,12 +43,6 @@ pkgTest <- function(x)
 	return("OK")
 }
 
-global.libraries <- c("dplyr","rprojroot","ggplot2","rvest","readr")
+global.libraries <- c("dplyr","rprojroot","ggplot2","rvest","readr","devtools","grateful")
 
 results <- sapply(as.list(global.libraries), pkgTest)
-
-if (!require("grateful",character.only = TRUE)) {
-  # install.packages("remotes")
-  remotes::install_github("Pakillo/grateful")
-  if(!require("grateful",character.only = TRUE)) stop("Package not found")
-}

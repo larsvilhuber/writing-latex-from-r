@@ -1,8 +1,8 @@
 
 
 # parameters
-latexnums.Rda <- file.path(tables,"latexnums.Rda")
-latexnums.tex <- file.path(tables,"latexnums.tex")
+latexnums.Rda <- file.path(outputs,"latexnums.Rda")
+latexnums.tex <- file.path(outputs,"latexnums.tex")
 
 ## Initialize a file that will be used at the end to write out LaTeX parameters for in-text 
 ## reference

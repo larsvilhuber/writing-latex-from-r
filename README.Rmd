@@ -29,7 +29,7 @@ source(file.path(rprojroot::find_rstudio_root_file(),"pathconfig.R"),echo=FALSE)
 we.are.README <- TRUE
 
 source(file.path(basepath,"global-libraries.R"),echo=FALSE)
-source(file.path(programs,"config.R"), echo=FALSE)
+source(file.path(programs,"config.R"), echo=TRUE)
 
 
 ```

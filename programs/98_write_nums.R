@@ -3,6 +3,7 @@
 
 ### Load libraries 
 ### Requirements: have library *here*
+source(file.path(rprojroot::find_rstudio_root_file(),"pathconfig.R"),echo=FALSE)
 source(here::here("global-libraries.R"),echo=TRUE)
 source(here::here("programs","config.R"),echo=TRUE)
 
